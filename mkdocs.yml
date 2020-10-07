@@ -1,0 +1,6 @@
+site_name: My Stuff
+nav:
+    - Home: index.md
+    - About: about.md
+    - Cleaning C Drive: clean_c.md
+theme: readthedocs
