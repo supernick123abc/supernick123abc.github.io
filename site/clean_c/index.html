@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Cleaning C Drive - My Stuff</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Cleaning C Drive";
+    var mkdocs_page_input_path = "clean_c.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> My Stuff</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Cleaning C Drive</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#get-an-overview-about-your-disk-space">Get an overview about your disk space</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#windirstat">WinDirStat</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#use-storage-sense">Use Storage Sense</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cleanmgrexe">cleanmgr.exe</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#clean-up-the-windows-component-store">Clean up the Windows Component Store</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#check-for-the-existence-of-volume-shadow-copies">Check for the existence of volume shadow copies</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#disable-and-re-enable-hibernation">Disable and re-enable hibernation</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../programs/">Useful Programs</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">My Stuff</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Cleaning C Drive</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="cleaning-c-drive">Cleaning C Drive</h1>
+<p><a href="https://superuser.com/questions/1433475/my-c-drive-is-full-without-reason">Source</a>    </p>
+<h2 id="get-an-overview-about-your-disk-space">Get an overview about your disk space</h2>
+<p>If you want general information about what is using disk space on your computer, you can use tools like <a href="https://portableapps.com/apps/utilities/windirstat_portable">WinDirStatPortable</a>. Select the drive(s) you want to have information about and start the analysis. The result is pretty much self-explanatory. You get an overview of directories and files sorted by size. Additionally, you get a visual representation of the used disk space.</p>
+<h4 id="windirstat">WinDirStat</h4>
+<p><img src="/img/wd.jpg"></p>
+<h2 id="use-storage-sense">Use Storage Sense</h2>
+<p>You find that under Settings &gt; System &gt; Storage, or just type Storage after you opened your Win 10 Start Menu</p>
+<p><img src="/img/ss.png"></p>
+<h2 id="cleanmgrexe">cleanmgr.exe</h2>
+<p>Use Disk Cleanup tool to get rid of temporary files</p>
+<p><img src="/img/dc.png"></p>
+<h2 id="clean-up-the-windows-component-store">Clean up the Windows Component Store</h2>
+<p>Open a Powershell session (as Admin) and analyze your component store by running</p>
+<pre><code>dism /online /Cleanup-image /AnalyzeComponentStore
+</code></pre>
+<p>This can take several minutes to complete. If it gives you the advise to cleanup the component store, run</p>
+<pre><code>dism /online /Cleanup-Image /StartComponentCleanup
+</code></pre>
+<p>You get more information by running</p>
+<pre><code>dism /online /Cleanup-Image /?
+</code></pre>
+<h2 id="check-for-the-existence-of-volume-shadow-copies">Check for the existence of volume shadow copies</h2>
+<p>List information about the shadow storage</p>
+<pre><code>vssadmin list shadowstorage
+</code></pre>
+<p>Or get information about the shadow files</p>
+<pre><code>vssadmin list shadows
+</code></pre>
+<p>Delete the oldest one on your C drive by running</p>
+<pre><code>vssadmin delete shadows /for=c: /oldest
+</code></pre>
+<p>Alternatively, you could delete them all</p>
+<pre><code>vssadmin delete shadows /all
+</code></pre>
+<h2 id="disable-and-re-enable-hibernation">Disable and re-enable hibernation</h2>
+<p>The Hiberfil.sys hidden system file is located in the root folder of the drive where the operating system is installed. It is approximately as big as the amount of random access memory (RAM) installed on the computer, as it stores a copy of the system memory on your hard disk when the hybrid sleep setting is turned on.</p>
+<p>Disable hibernation</p>
+<pre><code>powercfg /h off
+</code></pre>
+<p>Enable hibernation</p>
+<pre><code>powercfg /h on
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../programs/" class="btn btn-neutral float-right" title="Useful Programs">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../about/" class="btn btn-neutral" title="About"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../about/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../programs/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
