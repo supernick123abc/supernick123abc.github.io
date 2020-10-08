@@ -3,4 +3,5 @@ nav:
     - Home: index.md
     - About: about.md
     - Cleaning C Drive: clean_c.md
+    - Useful Programs: programs.md
 theme: readthedocs
