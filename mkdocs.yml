@@ -4,4 +4,5 @@ nav:
     - About: about.md
     - Cleaning C Drive: clean_c.md
     - Useful Programs: programs.md
+    - Diskpart Formatting Tips: format.md
 theme: readthedocs
