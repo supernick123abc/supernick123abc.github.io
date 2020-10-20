@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Useful Programs - My Stuff</title>
+  <title>Diskpart Formatting Tips - My Stuff</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Useful Programs";
-    var mkdocs_page_input_path = "programs.md";
+    var mkdocs_page_name = "Diskpart Formatting Tips";
+    var mkdocs_page_input_path = "format.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -59,22 +59,16 @@
                     <li class="toctree-l1"><a class="reference internal" href="../clean_c/">Cleaning C Drive</a>
                     </li>
                 </ul>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Useful Programs</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#ninite-multi-installer">Ninite - Multi-Installer</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#voicemeeter-audio-routing-management">Voicemeeter - Audio Routing &amp; Management</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#compactgui-transparent-compression">CompactGUI - Transparent Compression</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#multiscreen-blank-blankhide-multiple-screens">Multiscreen Blank - Blank/Hide Multiple Screens</a>
-    </li>
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../programs/">Useful Programs</a>
                     </li>
                 </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../format/">Diskpart Formatting Tips</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Diskpart Formatting Tips</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#source-httpswwwwindowscentralcomhow-clean-and-format-storage-drive-using-diskpart-windows-10">Source: https://www.windowscentral.com/how-clean-and-format-storage-drive-using-diskpart-windows-10</a>
+    </li>
+    </ul>
                     </li>
                 </ul>
       </div>
@@ -98,7 +92,7 @@
     
       
     
-    <li>Useful Programs</li>
+    <li>Diskpart Formatting Tips</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -109,35 +103,70 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="useful-programs-and-what-they-do">Useful Programs and What They Do:</h1>
-<h3 id="ninite-multi-installer">Ninite - Multi-Installer</h3>
-<p><a href="https://ninite.com/"><em>https://ninite.com/</em></a></p>
-<blockquote>
-<p>Silent installer that supports many popular applications. Useful for re-installing programs on a fresh install of Windows.</p>
-</blockquote>
-<p><img src="https://d8f7mp21btv4f.cloudfront.net/img/screenshot-d19f898aea36be8dcd93c3af7de4abb0.png"></p>
+                <h1 id="formatting-a-drive-with-diskpart">Formatting a Drive with Diskpart</h1>
+<h6 id="source-httpswwwwindowscentralcomhow-clean-and-format-storage-drive-using-diskpart-windows-10"><em>Source: <a href="https://www.windowscentral.com/how-clean-and-format-storage-drive-using-diskpart-windows-10">https://www.windowscentral.com/how-clean-and-format-storage-drive-using-diskpart-windows-10</a></em></h6>
 <hr />
-<h3 id="voicemeeter-audio-routing-management">Voicemeeter - Audio Routing &amp; Management</h3>
-<p><a href="https://vb-audio.com/Voicemeeter/"><em>https://vb-audio.com/Voicemeeter/</em></a></p>
-<blockquote>
-<p>Audio mixing program that allows for advanced routing of audio both in and out of programs with support for FX and virtual audio inputs/outputs. Useful with audio interfaces and streaming/recording.</p>
-</blockquote>
-<p><img src="https://vb-audio.com/Voicemeeter/VoicemeeterAudioMixer.jpg"></p>
+<ol>
+<li>Open Command Prompt as Administrator. <em>Right Click &gt; Run as Administrator</em></li>
+<li>
+<p>Run the following command to get to diskpart:</p>
+<p><code>diskpart</code></p>
+<h1 id="_1"></h1>
+</li>
+<li>
+<p>Use the following command to list the active disks on the system:</p>
+<p><code>list disk</code></p>
+<h1 id="_2"></h1>
+</li>
+<li>
+<p>Type the following command to select the disk you want to work with:</p>
+<p><code>select disk *Disk Number Here*</code> </p>
+<p><img src="https://www.windowscentral.com/sites/wpcentral.com/files/styles/w830/public/field/image/2020/04/diskpart-clean-drive-windows-10-cmd_.jpg?itok=UaskNSDG"></p>
 <hr />
-<h3 id="compactgui-transparent-compression">CompactGUI - Transparent Compression</h3>
-<p><a href="https://github.com/ImminentFate/CompactGUI"><em>https://github.com/ImminentFate/CompactGUI</em></a></p>
-<blockquote>
-<p>Program that utilizes Windows 10's compact.exe which will allow you to use transparent compression. Useful for compacting large programs and games with little to no performance loss.</p>
-</blockquote>
-<p><img src="https://camo.githubusercontent.com/402878bf600f1733b43339f983b9edd0cbc787c4/68747470733a2f2f692e696d6775722e636f6d2f3933666b3874302e706e67"></p>
+</li>
+<li>
+<p>Completely wipe the drive of it's contents with the clean command:</p>
+<p><code>clean</code></p>
+<h1 id="_3"></h1>
+</li>
+<li>
+<p>Check the disks again:</p>
+<p><code>lisk disk</code></p>
+<h1 id="_4"></h1>
+</li>
+<li>
+<p>Create a new partition with the following command:</p>
+<p><code>create partition primary</code></p>
+<h1 id="_5"></h1>
+</li>
+<li>
+<p>Select the newly created partition:</p>
+<p><code>select partition 1</code></p>
+<h1 id="_6"></h1>
+</li>
+<li>
+<p>Now make the selected partition the active one:</p>
+<p><code>active</code></p>
+<h1 id="_7"></h1>
+<p><img src="https://www.windowscentral.com/sites/wpcentral.com/files/styles/xlarge/public/field/image/2020/04/diskpart-create-primary-partition-windows-10_.jpg?itok=tel70nRb"></p>
 <hr />
-<h3 id="multiscreen-blank-blankhide-multiple-screens">Multiscreen Blank - Blank/Hide Multiple Screens</h3>
-<p><a href="http://multiscreenblank.nookkin.com/"><em>http://multiscreenblank.nookkin.com/</em></a></p>
-<blockquote>
-<p>Display program that lets you fade or blank out monitors or parts of monitors. Useful for when you want to stay logged in but have to step away or for hiding unused monitors while watching movies and videos.</p>
-</blockquote>
-<p><img src="http://multiscreenblank.nookkin.com/images/msb_main.png"></p>
-<hr />
+</li>
+<li>
+<p>Type the following to format with NTFS and add an optional label:</p>
+<p><code>format FS=NTFS label=LabelName quick</code></p>
+<h1 id="_8"></h1>
+</li>
+<li>
+<p>Assign a letter to the drive so that Windows can use it alongside other drives:</p>
+<p><code>assign letter=g</code></p>
+<h1 id="_9"></h1>
+</li>
+<li>
+<p>Close both diskpart and cmd with the exit command:</p>
+<p><code>exit</code></p>
+<h1 id="_10"></h1>
+</li>
+</ol>
               
             </div>
           </div>
@@ -145,10 +174,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../format/" class="btn btn-neutral float-right" title="Diskpart Formatting Tips">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../clean_c/" class="btn btn-neutral" title="Cleaning C Drive"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../programs/" class="btn btn-neutral" title="Useful Programs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -174,10 +201,8 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../clean_c/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../programs/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../format/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
