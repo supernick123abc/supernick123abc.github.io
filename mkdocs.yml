@@ -5,4 +5,5 @@ nav:
     - Cleaning C Drive: clean_c.md
     - Useful Programs: programs.md
     - Diskpart Formatting Tips: format.md
+    - Rocksmith on Linux: rocksmith.md
 theme: readthedocs
