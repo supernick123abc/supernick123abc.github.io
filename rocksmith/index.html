@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Rocksmith on Linux - My Stuff</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Rocksmith on Linux";
+    var mkdocs_page_input_path = "rocksmith.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> My Stuff</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../clean_c/">Cleaning C Drive</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../programs/">Useful Programs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../format/">Diskpart Formatting Tips</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Rocksmith on Linux</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#1-software-installation">1. Software installation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-installing-and-setting-up-jack2-audio-server">2. Installing and setting up Jack2 audio server</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-installing-wineasio-and-steamplay-integration-with-rs_asio">3. Installing wineASIO and SteamPlay integration with RS_ASIO</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-testing">4. Testing</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sources">Sources</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#this-tutorial-was-adapted-from-other-tutorialsforum-posts-online-which-can-be-found-in-the-links-below">This tutorial was adapted from other tutorials/forum posts online which can be found in the links below.</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">My Stuff</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Rocksmith on Linux</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="advanced-audio-setup-for-rocksmith-2014-remastered-on-linux">Advanced Audio Setup for Rocksmith 2014 Remastered on Linux</h1>
+<p>This is an advanced guide for Linux audio in general which utilizes many different packages and tools.</p>
+<h2 id="requirements">Requirements</h2>
+<blockquote>
+<ul>
+<li>
+<p>WineASIO <a href="https://kx.studio/Repositories"><em>https://kx.studio/Repositories</em></a></p>
+</li>
+<li>
+<p>RS-ASIO <a href="https://github.com/mdias/rs_asio"><em>https://github.com/mdias/rs_asio</em></a></p>
+</li>
+<li>
+<p>Jack2 audio server <a href="https://github.com/jackaudio/jack2"><em>https://github.com/jackaudio/jack2</em></a></p>
+</li>
+<li>
+<p>QJackCtl jack control panel, which usually contains Jack2</p>
+</li>
+<li>
+<p>Wine/winetricks</p>
+</li>
+<li>
+<p>Protontricks (optional) helps with setting up various wine settings for proton steam installs through things like winetricks. --gui command helps a lot.</p>
+</li>
+</ul>
+</blockquote>
+<hr />
+<h2 id="1-software-installation">1. Software installation</h2>
+<p><strong>Install KXStudio repositories via deb file from this link:</strong></p>
+<blockquote>
+<p><a href="https://launchpad.net/~kxstudio-debian/+archive/kxstudio/+files/kxstudio-repos_10.0.3_all.deb">https://launchpad.net/~kxstudio-debian/+archive/kxstudio/+files/kxstudio-repos_10.0.3_all.deb</a></p>
+</blockquote>
+<p><strong>Or manually install (debian/ubuntu):</strong></p>
+<blockquote>
+<p><a href="https://kx.studio/Repositories">https://kx.studio/Repositories</a></p>
+</blockquote>
+<p><strong>Install applications via terminal</strong></p>
+<p><code>sudo apt install rtirq grub-customizer jackd qjackctl wineasio</code></p>
+<p>Make sure to fix any dependency issues before continuing</p>
+<p><strong>Enable "threadirqs" in kernel/grub (Possibly not needed)</strong></p>
+<p>Use a tool such as grub customizer or manually change in various distros with parameters as such:
+<code>quiet splash mitigation=off threadirqs</code></p>
+<h2 id="2-installing-and-setting-up-jack2-audio-server">2. Installing and setting up Jack2 audio server</h2>
+<p>Open QjackCtl from the start menu and click on Setup. On the first tab click on the interface dropdown and select the guitar interface you have connected to your USB and set the following:</p>
+<pre><code>Realtime: checked
+
+Sample Rate: 48000
+
+Frames: 512 ( will set lower once everything works)
+
+Periods: 3
+</code></pre>
+<p>Hint: Do not use different devices for input and output. Your guitar interface should act as input and as output. Having different inputs and outputs can lead to bad things such as buffer underruns (xruns) and stuttering/system stability issues.</p>
+<p>Go to Advanced. On the "Input Device" on the right side you set the guitar interface again. Tick the H/W Monitor box. Go to misc and check the same boxes as the screenshot below:</p>
+<p><img src="/img/qjackctl.png"></p>
+<p>Click OK to save your settings and then click the start button on QJackCtl to start the audio server.</p>
+<p><img src="/img/qjackctl2.png"></p>
+<p>Also click the messages button to see the console output/logs for the audio server. If there are any errors, you may want to research them and address them now.</p>
+<h2 id="3-installing-wineasio-and-steamplay-integration-with-rs_asio">3. Installing wineASIO and SteamPlay integration with RS_ASIO</h2>
+<p>Copy the file wineasio.dll.so from /usr/lib/i386-linux-gnu/wine to the wine directory of the Proton version you use for Rocksmith. Unless you have custom game libraries, Proton is located here: <strong>/home/yourusername/.steam/steam/steamapps/common/Proton 5.13/dist/lib/wine/</strong>. </p>
+<p>Debian installs are usually located at <strong>/home/yourusername/.steam/debian-installation/steamapps/common/Proton 5.13/dist/lib/wine/</strong></p>
+<p><strong>Warning:</strong> If your Proton version changes, you will most likely have to do these steps again.</p>
+<p>Register wineasio with the Proton instance of Rocksmith via terminal. 221680 is the steam id of RS2014 Remastered:</p>
+<p><code>WINEPREFIX=/home/yourusername/.steam/steam/steamapps/compatdata/221680/pfx regsvr32 wineasio.dll</code></p>
+<p>Configure wineasio in Proton:</p>
+<p><code>WINEPREFIX=/home/yourusername/.steam/steam/steamapps/compatdata/221680/pfx winecfg</code></p>
+<p>Alternatively, use protontricks to open winecfg for your game install.</p>
+<p>In the wine configuration window go to the libraries tab and add the wineasio.dll as a new override. Edit it as native, builtin.</p>
+<p>Configure wineasio via registry:</p>
+<p>WINEPREFIX=/home/yourusername/.steam/steam/steamapps/compatdata/221680/pfx regedit</p>
+<p>Protontricks can also be used like before to do this.</p>
+<p>Go to the key HKEY_CURRENT_USER\Software\Wine\WineASIO and configure the values as follows:</p>
+<pre><code>Autostart server : 1
+
+Connect to hardware : 1
+
+Fixed buffer size : 1
+
+Number inputs: 2
+
+Number outputs: 2
+</code></pre>
+<p><strong>TIP:</strong> If these registry keys do not already exist, you can manually create them.</p>
+<p>Setup and configure rs_asio as per it's Github page.</p>
+<h2 id="4-testing">4. Testing</h2>
+<ul>
+<li>
+<p>Start the jack2 server via QJackCtl and open the message window to see what happens.</p>
+</li>
+<li>
+<p>Now start Rocksmith.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Hint:</strong> Whichever device is used in Jack will be used as a Realtone cable through RS_Asio. If the game detects a Realtone cable, you are heading in the right direction.</p>
+</blockquote>
+<ul>
+<li>
+<p>In the messages window of QjackCtl you should see hints that RS tried to connect</p>
+</li>
+<li>
+<p>Click on Connect in the QjackCtl panel, you should see the Rocksmith inputs and outputs there</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Hint:</strong> Rocksmith's sound will most likely become muted when you leave the game window.</p>
+</blockquote>
+<ul>
+<li>
+<p>If you are hearing stuttering/noise issues, close the game and try increasing your sample rate/frames in Jack settings. </p>
+</li>
+<li>
+<p>If you are not hearing any audio issues, close the game and try decreasing your sample rate/frames in Jack settings as far as you can to reduce latency.</p>
+</li>
+</ul>
+<h2 id="sources">Sources</h2>
+<h6 id="this-tutorial-was-adapted-from-other-tutorialsforum-posts-online-which-can-be-found-in-the-links-below">This tutorial was adapted from other tutorials/forum posts online which can be found in the links below.</h6>
+<p><a href="https://www.reddit.com/r/rocksmith/comments/jxngpx/howto_rocksmith_2014_on_linux_with_steamproton/">Main Reddit Guide</a></p>
+<p><a href="https://github.com/mdias/rs_asio/issues/99">RS_ASIO/WINEASIO Github Issue</a></p>
+<hr />
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../format/" class="btn btn-neutral" title="Diskpart Formatting Tips"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../format/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
